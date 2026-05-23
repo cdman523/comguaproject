@@ -3,6 +3,8 @@ import random as r
 import math as m
 from typing import TYPE_CHECKING
 
+from main import Animal, World
+
 if TYPE_CHECKING:
     from main import Animal, World
 
@@ -18,7 +20,7 @@ class HuntWhenHungry(Behavior):
     def __init__(self, target_classes):
         self.target_classes = target_classes
 
-    def act(self, entity, world):
+    def act(self, entity, world) -> bool:
         if entity.hunger >= 10:
             return False
         t = world.find_nearest_target_within(
