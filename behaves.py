@@ -35,6 +35,7 @@ class Wander(Behavior):
     def act(self, entity, world):
         see = entity.seeing + r.randint(-40, 40)
         entity.moveang(entity.speed, see)
+        return True
 
 
 class RunAway(Behavior):
